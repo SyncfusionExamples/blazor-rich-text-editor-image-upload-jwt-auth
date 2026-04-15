@@ -1,37 +1,56 @@
-
 # Secure Image Uploads in Blazor Rich Text Editor Using JWT Authentication
 
-This repository contains a working sample that demonstrates **how to secure image uploads in the Syncfusion Blazor Rich Text Editor** by attaching and validating **JWT authentication tokens** during file uploads.
+Simple sample showing image insertion and secure uploads for the Syncfusion Rich Text Editor.
 
-🔐 The server validates the token before saving any image, protecting your upload endpoint from unauthorized access and malicious requests.
+## What this shows
+
+- Open a File Manager dialog from the editor toolbar, browse server files, and insert an image URL into the editor.
+- Add form data (for example, a JWT or auth token) to uploads so the server can validate and authorize the request.
 
 ## Prerequisites
 
-- Visual Studio 2022  
-- .NET 8.0+  
-- Syncfusion Blazor Components
+- .NET 8.0 SDK
+- Visual Studio 2022+ or VS Code
+- Syncfusion Blazor packages (a license may be required)
 
-## How to run this application
+## Quick setup
+## Setup & Running Steps
 
-### Clone the repository
+Installation
 
 ```bash
 git clone https://github.com/SyncfusionExamples/blazor-rich-text-editor-image-upload-jwt-auth.git
-```
-### Navigate into the project
-
-```bash
-cd blazor-rich-text-editor-image-upload-with-jwt-auth/BlazorApp
+cd blazor-rich-text-editor-image-upload-jwt-auth
 ```
 
-### Restore NuGet packages
+Restore NuGet packages
 
 ```bash
 dotnet restore
 ```
 
-### Run the sample
+Run the application
 
 ```bash
 dotnet run
 ```
+
+## Usage
+
+1. Run the sample and open it in your browser.
+2. Click the File Manager button in the editor toolbar to pick an image.
+3. When uploading, the client adds auth fields (e.g. `authToken`) to the request; the server should validate those before saving.
+
+## Troubleshooting
+
+- If uploads fail, confirm the server accepts the posted form fields and that tokens are valid.
+- If images do not display, verify the returned image URLs are reachable from the browser.
+
+## Support
+
+This sample is provided for demonstration purposes. For issues, open an issue in the repository.
+
+## See also
+
+- [Online examples](https://blazor.syncfusion.com/demos/rich-text-editor/overview?theme=fluent2)
+- [Documentation](https://blazor.syncfusion.com/documentation/rich-text-editor/getting-started-webapp)
